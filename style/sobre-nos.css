@@ -1,0 +1,146 @@
+/*--------------------------------------------------\
+|													||
+|													|||
+|   Café do Ponto                                   |||
+|										Em Jun/2017	|||
+|   Desenvolvido por Marcio Teixeira                |||
+|													|||
+ \--------------------------------------------------\||
+  \--------------------------------------------------*/
+
+/*=========================================
+    Quem Somos
+=========================================*/
+
+.teaserSobreNos{
+   background: url(images/banner-nossos-cafes.jpg) no-repeat center top; 
+}
+.sobre1{
+    background: url(images/bg-sobre-nos-1.jpg) no-repeat center top;
+    height: 623px;
+}
+.sobre2{
+    background: url(images/bg-sobre-nos-2.jpg) no-repeat center top;
+    height: 624px;
+}
+.sobre1 .container,
+.sobre2 .container,
+.sobre1 .container div,
+.sobre2 .container div{
+    height: 100%;
+    overflow: hidden;
+}
+#sobre h2{
+    color: #543300;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 30px 0 30px;
+}
+#sobre p{
+    margin-bottom: 20px;
+}
+.sobre1 .texto{
+    height: 100%;
+    margin-left: 80px;
+    max-width: 375px;
+    position: relative;
+    width: 100%;
+}
+.sobre2 .texto{
+    height: 100%;
+    float: right;
+    margin-right: 80px;
+    max-width: 375px;
+    position: relative;
+    width: 100%;
+}
+#sobre span.faixa{
+    background: url(images/faixa-produto.png) no-repeat center top;
+    display: block;
+    height: 7px;
+    overflow: hidden;
+    width: 100%;
+}
+.sobre1 .texto span.faixa{
+    position: absolute;
+    bottom: 30px;
+}
+.sobre2 .texto span.faixa{
+    margin-top: 30px;
+}
+
+
+/*============================================
+	QUERYS
+===========================================*/
+
+@media screen and (max-width: 480px) {
+    #sobre{
+        background: url(images/bg-slider-produtos-home.jpg);
+    }
+	.sobre1, .sobre2{
+        background: none;
+        height: auto
+    }
+    .sobre1 .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .sobre1 .texto span.faixa{display: none !important;}
+    .sobre2 .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 481px) and (max-width : 767px) {
+    #sobre{
+        background: url(images/bg-slider-produtos-home.jpg);
+    }
+	.sobre1, .sobre2{
+        background: none;
+        height: auto
+    }
+    .sobre1 .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .sobre1 .texto span.faixa{display: none !important;}
+    .sobre2 .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+    .sobre1 .texto{
+        margin-left: 30px;
+        width: calc(100% - 30px);
+    }
+    .sobre2 .texto{
+        float: left;
+        margin-right: 30px;
+        width: calc(100% - 30px);
+    }
+}
+
+/*==================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+
+/*==================================================*/
+
+@media screen and (min-width: 1200px) {
+	
+}
+
+
+

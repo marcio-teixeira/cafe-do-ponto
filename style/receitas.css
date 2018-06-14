@@ -1,0 +1,310 @@
+/*--------------------------------------------------\
+|													||
+|													|||
+|   Café do Ponto                                   |||
+|										Em Jun/2017	|||
+|   Desenvolvido por Marcio Teixeira                |||
+|													|||
+\--------------------------------------------------\||
+\--------------------------------------------------*/
+
+/*=========================================
+Receitas
+=========================================*/
+
+.teaserReceitas{
+    background: url(images/banner-nossos-cafes.jpg) no-repeat center top; 
+}
+#receitas{
+    background: url(images/bg-slider-produtos-home.jpg);
+}
+.introReceitas{
+    text-align: center
+}
+.introReceitas h2{
+    color: #543300;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin-top: 50px;
+}
+.introReceitas .faixa{
+    background: url(images/faixa-produtos.png) no-repeat center top;
+    display: inline-block;
+    height: 10px;
+    margin: 50px 0;
+    max-width: 946px;
+    width: 90%;
+}
+.selecionaReceita .linkReceita{
+    border: 30px solid #fff;
+    border-radius: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    max-width: 376px;
+    margin: 0 auto 30px;
+}
+.selecionaReceita .linkReceita img{
+    border-radius: 100%;
+}
+.selecionaReceita .linkReceita .hover{
+    background: rgba(238,62,66,0.5);
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.selecionaReceita .linkReceita .hover:hover,
+.selecionaReceita .linkReceita .hover:focus{
+    opacity: 1;
+}
+
+/*===========================================
+    Drinks
+===========================================*/
+
+.teaserDrinks{
+    background: url(images/banner-drinks.jpg) no-repeat center top; 
+}
+.receitaLeft,
+.receitaRight{
+    height: 624px;
+}
+.drinkLeft{
+    background: url(images/receita-drink-left.jpg) no-repeat center top;
+}
+.drinkRight{
+    background: url(images/receita-drink-right.jpg) no-repeat center top;
+}
+.receitaLeft .imgReceita,
+.receitaRight .imgReceita{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    height: 100%;
+}
+.receitaLeft .container,
+.receitaRight .container,
+.receitaLeft .container div,
+.receitaRight .container div{
+    height: 100%;
+    overflow: hidden;
+}
+#receita h2{
+    color: #543300;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 30px 0 30px;
+}
+#receita p{
+    margin-bottom: 20px;
+}
+.receitaRight .texto{
+    height: 100%;
+    margin-left: 80px;
+    max-width: 375px;
+    position: relative;
+    width: 100%;
+}
+.receitaLeft .texto{
+    height: 100%;
+    float: right;
+    margin-right: 80px;
+    max-width: 375px;
+    position: relative;
+    width: 100%;
+}
+#receita span.faixa{
+    background: url(images/faixa-produto.png) no-repeat center top;
+    display: block;
+    height: 7px;
+    overflow: hidden;
+    width: 100%;
+}
+.receitaLeft .texto span.faixa{
+    position: absolute;
+    bottom: 30px;
+}
+.receitaRight .texto span.faixa{
+    margin-top: 30px;
+}
+
+
+
+
+/*===========================================
+    Pratos
+===========================================*/
+
+.teaserPratos{
+    background: url(images/pratos.png) no-repeat center top; 
+}
+.pratos-bg1{
+    background: url(images/pratos-bg1.png) no-repeat center top;
+}
+.pratos-bg2{
+    background: url(images/pratos-bg2.jpg) no-repeat center top;
+}
+
+
+
+/*===========================================
+    Pratos
+===========================================*/
+
+
+.teaserSobremesas{
+    background: url(images/sobremesas.png) no-repeat center top; 
+}
+.sobremesas-bg1{
+    background: url(images/sobremesas-bg1.jpg) no-repeat center top;
+}
+.sobremesas-bg2{
+    background: url(images/sobremesas-bg2.jpg) no-repeat center top;
+}
+.sobremesas-bg3{
+    background: url(images/sobremesas-bg3.jpg) no-repeat center top;
+}
+
+
+
+
+
+/*============================================
+QUERYS
+===========================================*/
+
+@media screen and (max-width: 480px) {
+    .selecionaReceita .linkReceita .hover{
+        font-size: 27px;
+        opacity: 1
+    }
+    #receita .container{padding: 0;}
+    .receitaLeft,
+    .receitaRight{
+        background: url(images/bg-slider-produtos-home.jpg);
+        height: auto;
+    }
+    .receitaRight .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .receitaLeft .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px;
+        padding-top: 30px;
+    }
+    .receitaLeft .texto span.faixa{
+        position: absolute;
+        top: 30px;
+    }
+    .receitaLeft .colImg{
+        background: url(images/receita-drink-left.jpg) no-repeat right center;
+        padding: 15px 0;
+    }
+    .receitaRight .colImg{
+        background: url(images/receita-drink-right.jpg) no-repeat left center;
+        padding: 15px 0;
+    }
+    .receitaLeft .colImg img,
+    .receitaRight .colImg img{
+        max-width: 300px;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 481px) and (max-width : 767px) {
+    .selecionaReceita .linkReceita .hover{
+        font-size: 30px;
+        opacity: 1;
+    }
+    #receita .container{padding: 0;}
+    .receitaRight .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .receitaLeft .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    .receitaLeft,
+    .receitaRight{
+        background: url(images/bg-slider-produtos-home.jpg);
+        height: auto;
+    }
+    .receitaRight .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .receitaLeft .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px;
+        padding-top: 30px;
+    }
+    .receitaLeft .texto span.faixa{
+        position: absolute;
+        top: 30px;
+    }
+    .receitaLeft .colImg{
+        background: url(images/receita-drink-left.jpg) no-repeat right center;
+        padding: 15px 0;
+    }
+    .receitaRight .colImg{
+        background: url(images/receita-drink-right.jpg) no-repeat left center;
+        padding: 15px 0;
+    }
+    .receitaLeft .colImg img,
+    .receitaRight .colImg img{
+        max-width: 300px;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+    .selecionaReceita .linkReceita{
+        border: 24px solid #fff;
+    }
+    .selecionaReceita .linkReceita .hover{
+        font-size: 20px;
+        opacity: 1;
+    }
+}
+
+/*==================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .selecionaReceita .linkReceita .hover{font-size: 27px;}
+}
+
+/*==================================================*/
+
+@media screen and (min-width: 1200px) {
+    .selecionaReceita .linkReceita .hover{font-size: 30px;}
+}
+
+
+

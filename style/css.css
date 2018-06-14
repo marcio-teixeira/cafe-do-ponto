@@ -1,0 +1,791 @@
+/*--------------------------------------------------\
+|													||
+|													|||
+|   Café do Ponto                                   |||
+|										Em Jun/2017	|||
+|   Desenvolvido por Marcio Teixeira                |||
+|													|||
+ \--------------------------------------------------\||
+  \--------------------------------------------------*/
+
+@font-face {
+    font-family: 'nexa_slab_bold_freeregular';
+    src: url('fonts/nexa_slab_bold-webfont.woff2') format('woff2'),
+         url('fonts/nexa_slab_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'nexa_slab_regular_freeregular';
+    src: url('fonts/nexa_slab_regular-webfont.woff2') format('woff2'),
+         url('fonts/nexa_slab_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova_bold';
+    src: url('fonts/proxima-nova-bold.eot');
+    src: url('fonts/proxima-nova-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proxima-nova-bold.woff2') format('woff2'),
+         url('fonts/proxima-nova-bold.woff') format('woff'),
+         url('fonts/proxima-nova-bold.ttf') format('truetype'),
+         url('fonts/proxima-nova-bold.svg#proxima_nova_altbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova_regular';
+    src: url('fonts/proxima-nova-regular.eot');
+    src: url('fonts/proxima-nova-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proxima-nova-regular.woff') format('woff'),
+         url('fonts/proxima-nova-regular.ttf') format('truetype'),
+         url('fonts/proxima-nova-regular.svg#proxima_nova_altregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {margin: 0;padding: 0;}
+nav, aside, header, footer, article, section, figure {display: block;}
+fieldset, a img {border: none;}
+body{
+}
+body, .ipt, select, textarea{
+	color:#000000;
+	font-family: 'proxima_nova_regular';
+	font-size:14px;
+}
+a:hover{ text-decoration:none;}
+p{ margin:0 0 11px 0;}
+.clearfix:before, .clearfix:after { content:""; display:table; }
+.clearfix:after { clear:both; }
+.show { display:block; }
+.hide { display:none; }
+.fl { float:left;display:inline; }
+.fr { float:right;display:inline; }
+.cb { clear: both; }
+ul{ list-style: none; padding: 0;}
+.title{font-family: 'Nothing You Could Do', cursive;}
+
+/*===================================================
+	Rejeita Browser
+==================================================*/
+
+#jr_overlay {
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	z-index: 200;
+	position: absolute;
+}
+
+#jr_wrap {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 300;
+	padding: 0;
+	margin: 0;
+}
+
+#jr_inner {
+	font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+	font-size: 12px;
+	background: #FFF;
+	border: 1px solid #CCC;
+	color: #4F4F4F;
+	margin: 0 auto;
+	height: auto;
+	padding: 20px;
+	position: relative;
+}
+
+#jr_header {
+	display: block;
+	color: #333;
+	padding: 5px;
+	padding-bottom: 0;
+	margin: 0;
+	font-family: Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	text-align: left;
+	font-size: 1.3em;
+	margin-bottom: 0.5em;
+}
+
+#jr_inner p {
+	text-align: left;
+	padding: 5px;
+	margin: 0;
+}
+
+#jr_inner ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#jr_inner ul li {
+	cursor: pointer;
+	float: left;
+	width: 120px;
+	height: 122px;
+	margin: 0 10px 10px 10px;
+	padding: 0;
+	text-align: center;
+}
+
+#jr_inner li a {
+	color: #333;
+	font-size: 0.8em;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+}
+
+#jr_inner li a:hover {
+	text-decoration: underline;
+}
+
+#jr_inner .jr_icon {
+	width: 100px;
+	height: 100px;
+	margin: 1px auto;
+	padding: 0;
+	background: transparent no-repeat scroll left top;
+	cursor: pointer;
+}
+
+#jr_close {
+	margin: 0 0 0 50px;
+	clear: both;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+}
+
+#jr_close a {
+	color: #000;
+	display: block;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	text-decoration: underline;
+}
+
+#jr_close p {
+	padding: 10px 0 0 0;
+	margin: 0;
+}
+
+/*=======================================
+    Header
+========================================*/
+
+header{
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10px;
+    text-align: center;
+    z-index: 2
+}
+header .menuLeft{
+    float: left;
+}
+header .menuLeft li{
+    float: left;
+    margin-right: 30px;
+}
+header .menuLeft li:last-child{margin-right: 0;}
+header .menuRight{
+    float: right;
+}
+header .menuRight li{
+    float: right;
+    margin-left: 30px;
+}
+header .menuRight li:last-child{margin-left: 0;}
+header .mainMenu{
+    margin: 80px 0 0 0;
+}
+header .mainMenu .linhaDupla{
+    margin-top: -10px;
+}
+header .mainMenu a{
+    color: #fff;
+    font-size: 16px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+header .mainMenu a:hover,
+header .mainMenu a.ativo{
+    color: #bb813b;
+}
+header .btMenuMobile{
+    color: #ffffff;
+    float: right;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+/*========================================
+    Conteúdo Home
+========================================*/
+
+.conteudoHome{
+    position: relative;
+    z-index: 1;
+    margin-top: -192px;
+}
+.banner{
+    position: relative;
+    text-align: center;
+}
+.banner span{
+    background: url(images/faixa-header.png) no-repeat center top;
+    display: inline-block;
+    height: 10px;
+    overflow: hidden;
+    max-width: 946px;
+    position: absolute;
+    z-index: 2;
+    width: 90%;
+    left: 50%;
+    margin-left: -473px;
+}
+.banner span.faixaTopBanner{
+    top: 200px;
+}
+.banner span.faixaBottomBanner{
+    bottom: 20px;
+}
+ .container-fluid{padding: 0;}
+#sliderProdutos .colSlider{padding: 0;}
+#sliderProdutos .imgProd{
+    background: url(images/bg-slider-produtos-home.jpg);
+    height: 466px;
+    padding-left: 15%;
+}
+#sliderProdutos .textoProd{
+    height: 466px;
+    padding-right: 15%;
+}
+#sliderProdutos .textoTradicional{
+    background: url(images/bg-aralto.jpg) center top;
+}
+#sliderProdutos .textoExtraforte{
+    background: url(images/bg-extra-forte.jpg) center top;
+}
+#sliderProdutos .textoExportacao{
+    background: url(images/bg-exportacao.jpg) center top;
+}
+#sliderProdutos .textoAralto{
+    background: url(images/bg-aralto.jpg) center top;
+}
+#sliderProdutos .textoEspecial{
+    background: url(images/bg-safra-especial.jpg) center top;
+}
+#sliderProdutos .textoAromatizados{
+    background: url(images/bg-aromatizados.jpg) center top;
+}
+#sliderProdutos .textoEspresso{
+    background: url(images/bg-espresso.jpg) center top;
+}
+#sliderProdutos .boxTexto{
+    background: rgba(255,255,255,0.7);
+    float: right;
+    margin-top: 80px;
+    padding: 15px;
+    max-width: 400px;
+    width: 80%;
+}
+#sliderProdutos .boxTexto h2{
+    color: #543300;
+    height: 100px;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 0;
+}
+#sliderProdutos .boxTexto p{
+    height: 140px;
+    margin: 0;
+}
+#sliderProdutos .boxTexto .saibaMais{
+}
+#sliderProdutos .boxTexto .saibaMais span{
+    background: url(images/faixa-saiba-mais.png) no-repeat center center;
+    float: left;
+    height: 20px;
+    width: calc(100% - 75px);
+    max-width: 268px;
+}
+#sliderProdutos .boxTexto .saibaMais a{
+    color: #ee3a43;
+    float: left;
+    font-family: 'proxima_nova_bold';
+    font-size: 13px;
+    line-height: 20px;
+    text-align: right;
+    width: 75px;
+}
+
+/*============================================
+    Footer
+============================================*/
+
+#cafeterias{
+    background: url(images/bg-lojas-home.jpg) center top;
+    text-align: center;
+    min-height: 468px;
+}
+#cafeterias span.faixa{
+    background: url(images/faixa-header.png) no-repeat center top;
+    display: inline-block;
+    height: 10px;
+    margin: 90px 0 40px;
+    max-width: 540px;
+    width: 90%;
+}
+#cafeterias h2{
+    color: #ffffff;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 0 0 30px;
+}
+#cafeterias p{
+    color: #ffffff;
+    margin: 0 0 30px;
+}
+#cafeterias .nav li.dropdown{
+    background: #261e18;
+    border-radius: 0;
+    color: #fff;
+    float: none;
+    font-style: italic;
+    margin: 0 auto 20px;
+    width: 320px;
+}
+#cafeterias .nav li.dropdown .dropdown-toggle{
+    border-radius: 0;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 0 0 10px;
+    text-align: left;
+}
+#cafeterias .nav li.dropdown .dropdown-toggle:hover,
+#cafeterias .nav li.dropdown .dropdown-toggle:focus{
+    background: #261e18;
+}
+#cafeterias .nav li.dropdown .dropdown-toggle span{
+    background: #5f4015;
+    float: right;
+    font-size: 20px;
+    text-align: center;
+    width: 40px;
+}
+#cafeterias .linkCardapio{
+    color: #bb813b;
+    display: inline-block;
+    font-family: 'proxima_nova_bold';
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.conteudoCafeterias{
+    background: url(images/bg-slider-produtos-home.jpg);
+}
+.conteudoCafeterias h3{
+    color: #543300;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 30px 0;
+}
+.conteudoCafeterias .listaCafeterias{
+    text-align: center;
+}
+.conteudoCafeterias .listaCafeterias .cafeteria{
+    display: inline-block;
+    max-width: 259px;
+    margin: 0 15px 30px;
+    width: 100%;
+}
+.conteudoCafeterias .listaCafeterias .cafeteria .endCafeteria{
+    background: #cf820c;
+    border-top: 1px solid #e7dac5;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+.conteudoCafeterias .listaCafeterias .cafeteria .endCafeteria h4{
+    font-family: 'proxima_nova_bold';
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+.conteudoCafeterias .listaCafeterias .cafeteria .endCafeteria p{
+    margin: 0;
+}
+footer{
+    border-top: 1px solid #bb813b;
+    background: #261e18;
+}
+.footer1 .logoFooter{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.footer1 .logoFooter a{
+    display: inline-block;
+    margin-top: -1px;
+}
+.footer1 .menuFooter{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.footer1 .menuFooter li{
+    display: inline-block;
+    margin: 0 10px;
+}
+.footer1 .menuFooter li a{
+    color: #bb813b;
+    font-size: 12px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.footer1 .menuFooter li a:hover,
+.footer1 .menuFooter li a.focus{
+    color: #ffffff
+}
+.footer2{
+    border-top: 1px solid #bb813b;
+    padding: 20px 0;
+}
+.footer2 .menuFooter2{
+    text-align: right;
+}
+.footer2 .menuFooter2 li{
+    display: inline-block;
+    line-height: 37px;
+    margin-right: 10px;
+}
+.footer2 .menuFooter2 li:last-child{margin-right: 0;}
+.footer2 .menuFooter2 a{
+    color: #ffffff;
+    font-size: 12px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.footer2 .menuFooter2 a:hover,
+.footer2 .menuFooter2 a:focus{
+    color: #bb813b
+}
+.footer2 .menuFooter2 a::after{
+    content: '|';
+    padding-left: 10px;
+}
+.footer2 .menuFooter2 li:last-child a::after{
+    content: '';
+    padding-left: 10px;
+}
+.footer2 .menuFooter2 a:hover::after,
+.footer2 .menuFooter2 a:hover::after{color: #ffffff;}
+.tab-content .tab-pane {    
+    position: relative;
+}
+
+/*==============================================
+    Internas
+==============================================*/
+
+ .interna header{
+    background: #261e18;
+}
+.teaserInternas{
+    height: 271px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    display: table;
+    width: 100%;
+}
+.teaserInternas span{
+    background: url(images/faixa-header.png) no-repeat center top;
+    display: inline-block;
+    height: 10px;
+    overflow: hidden;
+    max-width: 946px;
+    position: absolute;
+    z-index: 2;
+    width: 90%;
+    left: 50%;
+    margin-left: -473px;
+}
+.teaserInternas span.faixaTopBanner{
+    top: 10px;
+}
+.teaserInternas span.faixaBottomBanner{
+    bottom: 10px;
+}
+.teaserInternas h1{
+    color: #fff;
+    font-family: 'nexa_slab_bold_freeregular';
+    font-size: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.breadcrumb{
+    background: none;
+    color: #543300;
+    font-size: 12px;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.breadcrumb a{
+    color: #543300;
+}
+.breadcrumb span span{font-family: 'proxima_nova_bold';}
+.relative{
+    position: relative;
+}
+
+/*============================================
+	QUERYS
+===========================================*/
+
+@media screen and (max-width: 480px) {
+	header{
+        position: fixed;
+        top: 0 !important;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        -webkit-transition: -webkit-transform 0.4s ease;
+        -moz-transition: -moz-transform 0.4s ease;
+        -ms-transition: -ms-transform 0.4s ease;
+        -o-transition: -o-transform 0.4s ease;
+        transition: transform 0.4s ease;
+    }
+    .mm-opened header{
+        -webkit-transform: translate(-80%, 0);
+        -moz-transform: translate(-80%, 0);
+        -ms-transform: translate(-80%, 0);
+        -o-transform: translate(-80%, 0);
+        transform: translate(-80%, 0);
+    }
+    header{
+        background: #261e18;
+    }
+    header .logo img{
+        width: 140px;
+        margin-left: 25.7px;
+    }
+    .conteudoHome, .conteudo{
+        margin-top: 0;
+        padding-top: 127px
+    }
+    .banner span, .teaserInternas span{
+        left: 5%;
+        margin-left: 0;
+    }
+    .banner span.faixaTopBanner {
+        top: 20px;
+    }
+    #sliderProdutos .colSlider{width: 100%}
+    #sliderProdutos .textoProd{
+        height: auto;
+        overflow: hidden;
+        padding-right: 0;
+    }
+    #sliderProdutos .textoProd .boxTexto{
+        float: none;
+        margin: 40px auto;
+        overflow: hidden;
+    }
+    #sliderProdutos .imgProd{padding-left: 0}
+    #sliderProdutos .imgProd img{margin: 0 auto}
+    #cafeterias .nav li.dropdown{width: 100%}
+    .footer1 .menuFooter li{
+        display: block;
+        margin: 0 0 10px;
+    }
+    .footer2{text-align: center;}
+    .footer2 .menuFooter2{
+        text-align: center;
+        padding-top: 20px
+    }
+    .footer2 .menuFooter2 li{
+        display: block;
+        margin: 0 0 10px;
+        line-height: normal;
+    }
+    .footer2 .menuFooter2 a::after{
+        content: '';
+        padding-left: 0;
+    }
+    .teaserInternas h1{
+        font-size: 24px;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 481px) and (max-width : 767px) {
+	header{
+        position: fixed;
+        top: 0 !important;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        -webkit-transition: -webkit-transform 0.4s ease;
+        -moz-transition: -moz-transform 0.4s ease;
+        -ms-transition: -ms-transform 0.4s ease;
+        -o-transition: -o-transform 0.4s ease;
+        transition: transform 0.4s ease;
+    }
+    .mm-opened header{
+        -webkit-transform: translate(-80%, 0);
+        -moz-transform: translate(-80%, 0);
+        -ms-transform: translate(-80%, 0);
+        -o-transform: translate(-80%, 0);
+        transform: translate(-80%, 0);
+    }
+    header{
+        background: #261e18;
+    }
+    header .logo img{
+        width: 140px;
+        margin-left: 25.7px;
+    }
+    .conteudoHome, .conteudo{
+        margin-top: 0;
+        padding-top: 127px
+    }
+    .banner span, .teaserInternas span{
+        left: 5%;
+        margin-left: 0;
+    }
+    .banner span.faixaTopBanner {
+        top: 20px;
+    }
+    #sliderProdutos .boxTexto h2{
+        height: 80px;
+        font-size: 17px;
+    }
+    #sliderProdutos .boxTexto p{
+        height: 200px;
+        font-size: 14px;
+    }
+    .footer1 .menuFooter li{
+        display: block;
+        margin: 0 0 10px;
+    }
+    .footer2{text-align: center;}
+    .footer2 .menuFooter2{
+        text-align: center;
+        padding-top: 20px
+    }
+    .footer2 .menuFooter2 li{
+        display: block;
+        margin: 0 0 10px;
+        line-height: normal;
+    }
+    .footer2 .menuFooter2 a::after{
+        content: '';
+        padding-left: 0;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+	header{
+        position: fixed;
+        top: 0 !important;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        -webkit-transition: -webkit-transform 0.4s ease;
+        -moz-transition: -moz-transform 0.4s ease;
+        -ms-transition: -ms-transform 0.4s ease;
+        -o-transition: -o-transform 0.4s ease;
+        transition: transform 0.4s ease;
+    }
+    .mm-opened header{
+        -webkit-transform: translate(-80%, 0);
+        -moz-transform: translate(-80%, 0);
+        -ms-transform: translate(-80%, 0);
+        -o-transform: translate(-80%, 0);
+        transform: translate(-80%, 0);
+    }
+    header{
+        background: #261e18;
+    }
+    header .logo img{
+        width: 160px;
+        margin-left: 25.7px;
+    }
+    .conteudoHome, .conteudo{
+        margin-top: 0;
+        padding-top: 144px
+    }
+    .banner span, .teaserInternas span{
+        left: 5%;
+        margin-left: 0;
+    }
+    .banner span.faixaTopBanner{
+        top: 20px;
+    }
+    .footer2 .menuFooter2 li{
+        margin-right: 5px;
+    }
+    .footer2 .menuFooter2 a{
+        font-size: 10px;
+    }
+    .footer2 .menuFooter2 a::after{
+        content: '|';
+        padding-left: 6px;
+    }
+}
+
+/*==================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	header .logo img{
+        width: 180px;
+    }
+    header .mainMenu {
+        margin: 72px 0 0 0;
+    }
+    header .mainMenu a{
+        font-size: 15px;
+    }
+    .conteudoHome{
+        margin-top: -161px;
+    }
+    .banner span.faixaTopBanner{
+        top: 165px;
+    }
+    #menuMobile{display: none}
+}
+
+/*==================================================*/
+
+@media screen and (min-width: 1200px) {
+	#menuMobile{display: none}
+}
+
+
+

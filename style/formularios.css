@@ -1,0 +1,116 @@
+/*--------------------------------------------------\
+|													||
+|													|||
+|   Café do Ponto                                   |||
+|										Em Jun/2017	|||
+|   Desenvolvido por Marcio Teixeira                |||
+|													|||
+ \--------------------------------------------------\||
+  \--------------------------------------------------*/
+
+/*=========================================
+    Formulários
+=========================================*/
+
+.teaserCafes{
+   background: url(images/banner-nossos-cafes.jpg) no-repeat center top; 
+}
+#formularios{
+    background: url(images/bg-slider-produtos-home.jpg);
+    padding-bottom: 50px;
+}
+
+#formularios h2{
+    color: #543300;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 50px 0;
+}
+#formularios p{
+    margin-bottom: 30px;
+}
+#formularios .campo{
+    margin-bottom: 15px;
+}
+#formularios .campo .ipt,
+#formularios .campo select{
+    border: 1px solid #61441b;
+    background: none;
+    color: #cf820c;
+    font-style: italic;
+    height: 34px;
+    padding: 0 10px;
+    width: 100%
+}
+#formularios .campo textarea{
+    border: 1px solid #61441b;
+    background: none;
+    color: #cf820c;
+    font-style: italic;
+    height: 100px;
+    padding: 10px;
+    width: 100%
+}
+#formularios .campo .btEnviar{
+    border: 1px solid #61441b;
+    background: #61441b;
+    color: #cf820c;
+    height: 34px;
+    width: 100%
+}
+#formularios .campo .btEnviar:hover,
+#formularios .campo .btEnviar:focus{
+    background: #cf820c;
+    color: #61441b;
+}
+#formularios .campo .ipt::-moz-placeholder,
+#formularios .campo textarea::-moz-placeholder{
+    color: #cf820c;
+    opacity: 1;
+}
+#formularios .campo .ipt:-ms-input-placeholder,
+#formularios .campo textarea:-ms-input-placeholder{
+    color: #cf820c;
+    opacity: 1;
+}
+#formularios .campo .ipt::-webkit-input-placeholder,
+#formularios .campo textarea::-webkit-input-placeholder{
+    color: #cf820c;
+    opacity: 1;
+}
+
+
+/*============================================
+	QUERYS
+===========================================*/
+
+@media screen and (max-width: 480px) {
+	
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 481px) and (max-width : 767px) {
+	
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+    
+}
+
+/*==================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+
+/*==================================================*/
+
+@media screen and (min-width: 1200px) {
+	
+}
+
+
+

@@ -1,0 +1,386 @@
+/*--------------------------------------------------\
+|													||
+|													|||
+|   Café do Ponto                                   |||
+|										Em Jun/2017	|||
+|   Desenvolvido por Marcio Teixeira                |||
+|													|||
+ \--------------------------------------------------\||
+  \--------------------------------------------------*/
+
+/*=========================================
+    Nossos Cafés
+=========================================*/
+
+.teaserCafes{
+   background: url(images/banner-nossos-cafes.jpg) no-repeat center top; 
+}
+#cafes{
+    background: url(images/bg-slider-produtos-home.jpg);
+}
+.escolheIntensidade{
+    text-align: center
+}
+.escolheIntensidade h2{
+    color: #543300;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin-top: 50px;
+}
+.escolheIntensidade ul{
+    padding-top: 40px;
+}
+.escolheIntensidade ul li{
+    display: inline-block;
+    width: 45px;
+}
+.escolheIntensidade ul li a .numero{
+    color: #ee3a43;
+    font-size: 22px;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.escolheIntensidade ul li a .circulo{
+    border: 4px solid #ee3a43;
+    border-radius: 30px;
+    display: block;
+    height: 30px;
+    margin: 0 auto;
+    width: 30px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.escolheIntensidade ul li:hover a .numero,
+.escolheIntensidade ul li a:focus,
+.escolheIntensidade ul li.ativo a .numero{
+    color: #ffffff;
+    font-family: 'proxima_nova_bold';
+    font-size: 33px;
+    text-decoration: none;
+}
+.escolheIntensidade ul li:hover a .circulo,
+.escolheIntensidade ul li.ativo a .circulo,
+.escolheIntensidade ul li.cheio a .circulo,
+.escolheIntensidade ul li.cheio2 a .circulo{
+    background: #ee3a43;
+}
+.escolheIntensidade .faixa{
+    background: url(images/faixa-produtos.png) no-repeat center top;
+    display: inline-block;
+    height: 10px;
+    margin: 50px 0;
+    max-width: 946px;
+    width: 90%;
+}
+
+.cafes{
+    text-align: center
+}
+.cafes .cafe{
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.cafes .cafe a.apagado{
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/*===========================================
+    Tradicional
+==========================================*/
+
+.teaserTradicional{
+    background: url(images/banner-tradicional.jpg) no-repeat center top;
+}
+.produtoTradicional{
+    background: url(images/bg-tradicional-interna.jpg) repeat-y center top;
+}
+#produto .imgProd img{
+    margin: 0 auto;
+}
+#produto .textoProd{
+    color: #fff;
+    float: right;
+    margin-right: 80px;
+    max-width: 375px;
+    width: 100%;
+}
+#produto .textoProd h2{
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 50px 0 30px;
+}
+
+#produto .textoProd span.faixa{
+    background: url(images/faixa-produto.png) no-repeat center top;
+    display: block;
+    height: 7px;
+    overflow: hidden;
+    width: 100%;
+}
+#produto .textoProd .texto1{
+    height: 200px
+}
+#produto .textoProd .texto2{
+    padding-top: 110px;
+}
+#produto .textoProd .texto2 p{
+    margin-bottom: 30px;
+}
+.linkCafes{
+    text-align: center;
+}
+.linkCafes li{
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 6px;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.linkCafes li a{
+    border-radius: 12px;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    color: transparent;
+    border: 1px solid;
+    outline: none;
+    background: #fff;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.linkCafes li:nth-child(1) a{
+    border-color: #f79423;
+}
+.linkCafes li:nth-child(2) a{
+    border-color: #ee303c;
+}
+.linkCafes li:nth-child(3) a{
+    border-color: #925a25;
+}
+.linkCafes li:nth-child(4) a{
+    border-color: #e46126;
+}
+.linkCafes li:nth-child(5) a{
+    border-color: #94a25e;
+}
+.linkCafes li:nth-child(6) a{
+    border-color: #b47634;
+}
+.linkCafes li:nth-child(7) a{
+    border-color: #9c9c9d;
+}
+.linkCafes li.ativo,
+.linkCafes li:hover{
+    padding: 0
+}
+.linkCafes li.ativo a,
+.linkCafes li:hover a{
+    height: 24px;
+    width: 24px;
+}
+
+.linkCafes li:nth-child(1).ativo a,
+.linkCafes li:nth-child(1):hover a{
+    background-color: #f79423;
+    border-color: #edc390;
+}
+.linkCafes li:nth-child(2).ativo a,
+.linkCafes li:nth-child(2):hover a{
+    background-color: #ee303c;
+    border-color: #edc390;
+}
+.linkCafes li:nth-child(3).ativo a,
+.linkCafes li:nth-child(3):hover a{
+    background-color: #925a25;
+    border-color: #edc390;
+}
+.linkCafes li:nth-child(4).ativo a,
+.linkCafes li:nth-child(4):hover a{
+    background-color: #e46126;
+    border-color: #edc390;
+}
+.linkCafes li:nth-child(5).ativo a,
+.linkCafes li:nth-child(5):hover a{
+    background-color: #94a25e;
+    border-color: #edc390;
+}
+.linkCafes li:nth-child(6).ativo a,
+.linkCafes li:nth-child(6):hover a{
+    background-color: #b47634;
+    border-color: #edc390;
+}
+.linkCafes li:nth-child(7).ativo a,
+.linkCafes li:nth-child(7):hover a{
+    background-color: #9c9c9d;
+    border-color: #edc390;
+}
+
+/*=======================================
+    Extraforte
+==========================================*/
+
+.teaserExtraforte{
+    background: url(images/banner-extraforTe.jpg) no-repeat center top;
+}
+.produtoExtraforte{
+    background: url(images/bg-extraforte-interna.jpg) repeat-y center top;
+}
+
+/*=======================================
+    Exportação
+==========================================*/
+
+.teaserExportacao{
+    background: url(images/banner-exportacao.jpg) no-repeat center top;
+}
+.produtoExportacao{
+    background: url(images/bg-exportacao-interna.jpg) repeat-y center top;
+}
+
+/*=======================================
+    Aralto
+==========================================*/
+
+.teaserAralto{
+    background: url(images/banner-aralto.jpg) no-repeat center top;
+}
+.produtoAralto{
+    background: url(images/bg-aralto-interna.jpg) repeat-y center top;
+}
+
+/*=======================================
+    Safra Especial
+==========================================*/
+
+.teaserSafra{
+    background: url(images/banner-safra-especial.jpg) no-repeat center top;
+}
+.produtoSafra{
+    background: url(images/bg-safra-interna.jpg) repeat-y center top;
+}
+
+/*=======================================
+    Aromatizados
+==========================================*/
+
+.teaserAromatizados{
+    background: url(images/banner-aromatizados.jpg) no-repeat center top;
+}
+.produtoAromatizados{
+    background: url(images/bg-aromatizados-interna.jpg) repeat-y center top;
+}
+
+/*=======================================
+    Espresso
+==========================================*/
+
+.teaserEspresso{
+    background: url(images/banner-espresso.jpg) no-repeat center top;
+}
+.produtoEspresso{
+    background: url(images/bg-espresso-interna.jpg) repeat-y center top;
+}
+
+/*============================================
+	QUERYS
+===========================================*/
+
+@media screen and (max-width: 480px) {
+	#produto .textoProd{margin-right: 0}
+    #produto .container{padding: 0;}
+    #produto .colTexto{
+        width: 100%
+    }
+    #produto .colTexto .textoProd{
+        float: none;
+        margin: 0 auto;
+    }
+    #produto .textoProd h2{
+        font-size: 17px;
+    }
+    .produtoTradicional{
+        background: #f79423;
+    }
+    .produtoExtraforte{
+        background: #ee303c;
+    }
+    .produtoExportacao{
+        background: #925a25;
+    }
+    .produtoAralto{
+        background: #e46126;
+    }
+    .produtoSafra{
+        background: #93a15c;
+    }
+    .produtoAromatizados{
+        background: #b47734;
+    }
+    .produtoEspresso{
+        background: #9c9c9d;
+    }
+    #produto .colImg{
+        background: url(images/bg-slider-produtos-home.jpg);
+        width: 100%
+    }
+    .escolheIntensidade ul {
+        padding-top: 10px;
+    }
+    .escolheIntensidade .faixa{
+        margin: 20px 0;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 481px) and (max-width : 767px) {
+	#produto .textoProd{margin-right: 0}
+    #produto .textoProd h2{
+        font-size: 17px;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+    #produto .textoProd{margin-right: 0}
+}
+
+/*==================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	#produto .textoProd{margin-right: 63px}
+}
+
+/*==================================================*/
+
+@media screen and (min-width: 1200px) {
+	
+}
+
+
+

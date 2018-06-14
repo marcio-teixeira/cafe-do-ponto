@@ -1,0 +1,190 @@
+/*--------------------------------------------------\
+|													||
+|													|||
+|   Café do Ponto                                   |||
+|										Em Jun/2017	|||
+|   Desenvolvido por Marcio Teixeira                |||
+|													|||
+\--------------------------------------------------\||
+\--------------------------------------------------*/
+
+
+/*===========================================
+    Ritual do Café
+===========================================*/
+
+.teaserRitual{
+    background: url(images/banner-nossos-cafes.jpg) no-repeat center top; 
+}
+.ritualLeft,
+.ritualRight{
+    height: 100%;
+}
+.drinkLeft{
+    background: url(images/bg-ritual-left.jpg) repeat-y center top;
+    
+}
+.drinkRight{
+    background: url(images/bg-ritual-right.jpg) repeat-y center top;
+}
+.ritualLeft .imgRitual,
+.ritualRight .imgRitual{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    height: 100%;
+    padding: 40px 0;
+}
+.ritualLeft .container,
+.ritualRight .container,
+.ritualLeft .container div,
+.ritualRight .container div{
+    height: 100%;
+    overflow: hidden;
+}
+#ritual h2{
+    color: #543300;
+    font-family: 'proxima_nova_bold';
+    font-size: 22px;
+    margin: 30px 0 30px;
+}
+#ritual p{
+    margin-bottom: 20px;
+}
+.ritualRight .texto{
+    height: 100%;
+    margin-left: 80px;
+    max-width: 375px;
+    position: relative;
+    padding-bottom: 50px;
+    width: 100%;
+}
+.ritualLeft .texto{
+    height: 100%;
+    float: right;
+    margin-right: 80px;
+    max-width: 375px;
+    position: relative;
+    padding-bottom: 50px;
+    width: 100%;
+}
+#ritual span.faixa{
+    background: url(images/faixa-produto.png) no-repeat center top;
+    display: block;
+    height: 7px;
+    overflow: hidden;
+    width: 100%;
+}
+.ritualLeft .texto span.faixa{
+    position: absolute;
+    bottom: 30px;
+}
+.ritualRight .texto span.faixa{
+    margin-top: 30px;
+}
+
+/*============================================
+QUERYS
+===========================================*/
+
+@media screen and (max-width: 480px) {
+    #ritual .container{padding: 0;}
+    .ritualLeft,
+    .ritualRight{
+        background: url(images/bg-slider-produtos-home.jpg);
+        height: auto;
+    }
+    .ritualRight .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .ritualLeft .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px;
+        padding-top: 30px;
+    }
+    .ritualLeft .texto span.faixa{
+        position: absolute;
+        top: 30px;
+    }
+    .ritualLeft .colImg{
+        background: url(images/ritual-drink-left.jpg) no-repeat right center;
+        padding: 15px 0;
+    }
+    .ritualRight .colImg{
+        background: url(images/ritual-drink-right.jpg) no-repeat left center;
+        padding: 15px 0;
+    }
+    .ritualLeft .colImg img,
+    .ritualRight .colImg img{
+        max-width: 300px;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 481px) and (max-width : 767px) {
+    #ritual .container{padding: 0;}
+    .ritualRight .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .ritualLeft .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    .ritualLeft,
+    .ritualRight{
+        background: url(images/bg-slider-produtos-home.jpg);
+        height: auto;
+    }
+    .ritualRight .texto{
+        margin: 0 auto;
+        max-width: 500px
+    }
+    .ritualLeft .texto{
+        float: none;
+        margin: 0 auto;
+        max-width: 500px;
+        padding-top: 30px;
+    }
+    .ritualLeft .texto span.faixa{
+        position: absolute;
+        top: 30px;
+    }
+    .ritualLeft .colImg{
+        background: url(images/ritual-drink-left.jpg) no-repeat right center;
+        padding: 15px 0;
+    }
+    .ritualRight .colImg{
+        background: url(images/ritual-drink-right.jpg) no-repeat left center;
+        padding: 15px 0;
+    }
+    .ritualLeft .colImg img,
+    .ritualRight .colImg img{
+        max-width: 300px;
+    }
+}
+
+/*==================================================*/
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+}
+
+/*==================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/*==================================================*/
+
+@media screen and (min-width: 1200px) {
+}
+
+
+
